@@ -1,4 +1,4 @@
----
+Author: Hanna-Leena --
 title: "IODS course project"
 output:
   html_document:

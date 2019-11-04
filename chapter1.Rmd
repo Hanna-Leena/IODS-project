@@ -1,4 +1,4 @@
 
 # About the project
-
-*Write a short description about the course and add a link to your GitHub repository here. This is an R Markdown (.Rmd) file so you can use R Markdown syntax.*
+Difficult course for me. Never done this before. Hoping to learn the basics of R-programme. I heard of the course from my colleagues.
+*Write a short description about the course and add a link to your GitHub repository here https://github.com/Hanna-Leena/IODS-project. This is an R Markdown (.Rmd) file so you can use R Markdown syntax.*

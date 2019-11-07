@@ -1,7 +1,52 @@
-# Insert chapter 2 title here
+# Insert chapter 2 : Regression on model validation
 
-*Describe the work you have done this week and summarize your learning.*
+*This week I am doing regression analysis and model validation. But first I had to wrangle with the original data. That was pretty difficult for me. But finally with lots of errors and trying again I succeeded.*
+#First opening the data.
+students2014 <- read.csv("learning2014.csv", header = TRUE, sep= ",")
+View(students2014)
+str(students2014)
+dim(students2014)
+head(students2014)
+#This data has 166 observations which means 166 students. This data has 7 variables. The 7 variables are gender, age, attitude, deep, stra, surf and points. The attitude variable gives information of the students' global attitude toward statistics. Points mean exam points and their points related to different aspects of learning (Deep, strategic and surface learning).
 
-- Describe your work and results clearly. 
-- Assume the reader has an introductory course level understanding of writing and reading R code as well as statistical methods.
-- Assume the reader has no previous knowledge of your data or the more advanced methods you are using.
+#Show graphical overview of the data and show summaries of variables in the data
+
+#graphical overview
+pairs(students2014[-1], col=students2014$gender)
+#This picture is difficult for me to read. All the dots are too close to each other. Not very helpful for me. I can't even explain to you what I see.
+#summary of the data
+summary(students2014)
+#There are 110 females and 56 males. Minimum age is 17, median 22, mean 25.51, maximum 55. There are also quartiles you can use; 1st quartile 21, 3rd quartile 27. Exam points are minimum 7, median 23, mean 22.72, maximum 33.0, 1st quartile 19, 3rd quartile 27.75. Global attitude minimum 14, median 32, mean 31.43, max 50, 1st quartile 26, 3rd quartile 37. Deep questions points minimum 1.58, median 3.667, mean 3.68, 3rd quartile 4.083. And so on. Not everybody like these kinds of table but for me it gives quick insight into my data and I use it quite often. 
+
+#Adding libraries
+library(GGally)
+library(ggplot2)
+install.packages("GGally")
+library(GGally)
+#Adding ggplot2 was easy. Library GGally couldn't be added. It sais that there is no package called GGally. Tried it so that I installed the packages. Don't know if it is working now.
+
+#Graphic picture of the data
+p <- ggpairs(students2014, mapping = aes(alpha=0.5), lower=list(combo =wrap("facethist", bins=20)))
+p
+#This way the data is more easily readable. Almost all the variables are normally distributes. The age is skewed. The picture also shows that there is not a very strong correlation between different variables since the correlations are between -0.3 - 0.4. 
+
+#Choose three variables as explanatory variables and fit a regression model where exam points is the target (dependent) variable.
+model <- lm(Points ~ gender + Attitude + stra, data=students2014)
+summary(model)
+#This test studied the association of exam points (target value, which was asked) with gender, attitude and strategic learning (explanatory variables). It can be seen that the Attitude is the only value that is statistically siginificant (p-value is < 0.05.). Actually the p-value is very low.
+
+# Next we are using a summary of my fitted model, to explain the relationship between the chosen explanatory variable and the target variable.
+model_2 <- lm(Points ~ Attitude, data=students2014)
+summary(model_2)
+#These results mean that the attitude's estimate is 0.35 and the p-value stays still <0.05 being statistically significant. In other words this means that when the attitude increases by 1 unit the exam points increase by 0.35.
+#Exlaining the the multiple R squared of the model. R-squared is a statistical meathod showing how close the data is to the fitted regression line. Meaning how well does the model fit to my data. In general it can be said that the higher the R-squared, the better the model fits to the data. The definition of R-squared is the percentage of the response variable variation that is explained by a linear model.R-squared = Explained variation / Total variation R-squared is always between 0 and 100%. In this summary we can see that the multiple R-squared is 0.1906 so 19% which means that this model explains only 1/5 of the exam points around their mean. R-squared does not determine whether the coefficient estimates and predictions are biased. This is why you must assess the residual plots.
+
+#Produce the following diagnostic plots: Residuals vs Fitted values, Normal QQ-plot and Residuals vs Leverage.
+#There are several assumptions in the linear regression model. With the help of these plots you can analyze the residuals of the model and see how well the linear regression model is working or are the some problems with it.
+# Residual vs Fitted values
+plot(model_2, which=c(2,1,5))
+#This plot shows that the residuals have constant variance. You can find an equally spread residuals around the horizontal line without distinct patterns. 
+#Normal QQ-plot
+#With the Q-Q plot you can explore that the residuals are normally distributed. As you can see the points are very close to the line. There are the upper and lower tails which have some deviation. I think this is acceptable. I would interpret that the errors are normally distributed.
+#Residuals vs Leverage
+#This plot helps you to understand if there are outliers in the data that are influencial in the linear regression model. In this analysis all the cases are inside the Cook's distance lines.

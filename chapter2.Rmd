@@ -65,7 +65,8 @@ summary(model_2)
 
 #These results mean that the attitude's estimate is 0.35 and the p-value stays still <0.05 being statistically significant. In other words this means that when the attitude increases by 1 unit the exam points increase by 0.35.
 
-## Exlaining the the multiple R squared of the model. R-squared is a statistical method showing how close the data is to the fitted regression line. Meaning how well does the model fit to my data. In general it can be said that the higher the R-squared, the better the model fits to the data. The definition of R-squared is the percentage of the response variable variation that is explained by a linear model.R-squared = Explained variation / Total variation R-squared, it is always between 0 and 100%. In this summary we can see that the multiple R-squared is 0.1906 so 19% which means that this model explains only 1/5 of the exam points around their mean. R-squared does not determine whether the coefficient estimates and predictions are biased. This is why you must assess the residual plots.
+## Exlaining the the multiple R squared of the model. 
+R-squared is a statistical method showing how close the data is to the fitted regression line. Meaning how well does the model fit to my data. In general it can be said that the higher the R-squared, the better the model fits to the data. The definition of R-squared is the percentage of the response variable variation that is explained by a linear model.R-squared = Explained variation / Total variation R-squared, it is always between 0 and 100%. In this summary we can see that the multiple R-squared is 0.1906 so 19% which means that this model explains only 1/5 of the exam points around their mean. R-squared does not determine whether the coefficient estimates and predictions are biased. This is why you must assess the residual plots.
 
 ## Produce the following diagnostic plots: Residuals vs Fitted values, Normal QQ-plot and Residuals vs Leverage.
 

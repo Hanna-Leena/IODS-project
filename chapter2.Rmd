@@ -1,12 +1,21 @@
-# Insert chapter 2 : Regression on model validation
+---
+output: 
+  html_document: 
+    toc: yes
+---
+# Insert chapter 2 : Hanna-Leena Kukkola Regression on model validation
+
+https://github.com/Hanna-Leena/IODS-project
 
 *This week I am doing regression analysis and model validation. But first I had to wrangle with the original data. That was pretty difficult for me. But finally with lots of errors and trying again I succeeded.*
+
 #First opening the data.
 students2014 <- read.csv("learning2014.csv", header = TRUE, sep= ",")
 View(students2014)
 str(students2014)
-dim(students2014)
+
 head(students2014)
+
 #This data has 166 observations which means 166 students. This data has 7 variables. The 7 variables are gender, age, attitude, deep, stra, surf and points. The attitude variable gives information of the students' global attitude toward statistics. Points mean exam points and their points related to different aspects of learning (Deep, strategic and surface learning).
 
 #Show graphical overview of the data and show summaries of variables in the data
@@ -14,6 +23,7 @@ head(students2014)
 #graphical overview
 pairs(students2014[-1], col=students2014$gender)
 #This picture is difficult for me to read. All the dots are too close to each other. Not very helpful for me. I can't even explain to you what I see.
+
 #summary of the data
 summary(students2014)
 #There are 110 females and 56 males. Minimum age is 17, median 22, mean 25.51, maximum 55. There are also quartiles you can use; 1st quartile 21, 3rd quartile 27. Exam points are minimum 7, median 23, mean 22.72, maximum 33.0, 1st quartile 19, 3rd quartile 27.75. Global attitude minimum 14, median 32, mean 31.43, max 50, 1st quartile 26, 3rd quartile 37. Deep questions points minimum 1.58, median 3.667, mean 3.68, 3rd quartile 4.083. And so on. Not everybody like these kinds of table but for me it gives quick insight into my data and I use it quite often. 
@@ -50,3 +60,8 @@ plot(model_2, which=c(2,1,5))
 #With the Q-Q plot you can explore that the residuals are normally distributed. As you can see the points are very close to the line. There are the upper and lower tails which have some deviation. I think this is acceptable. I would interpret that the errors are normally distributed.
 #Residuals vs Leverage
 #This plot helps you to understand if there are outliers in the data that are influencial in the linear regression model. In this analysis all the cases are inside the Cook's distance lines.
+
+library(rmarkdown)
+render("chapter2.Rmd", output_format = "html_document")
+
+getwd()

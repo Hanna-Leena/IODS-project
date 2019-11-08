@@ -1,4 +1,6 @@
 #Hanna-Leena Kukkola 06.11.2019 New excercise linear regression
+https://github.com/Hanna-Leena/IODS-project
+
 lrn14 <- read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS3-data.txt", sep="\t", header=TRUE)
 #Looking at the dimensions of the data
 dim (lrn14)

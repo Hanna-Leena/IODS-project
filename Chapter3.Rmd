@@ -1,7 +1,9 @@
 ---
 title: "Logistic Regression"
+Author: "Hanna-Leena Kukkola"
 output: html_document
 ---
+# Week 3, Logistic Regression
 
 # Reading the data
 This week we will learn about logistic regression. Before analysing the data I have been done some wrangeling. It wasn't as diffucult as week before. Now the data is ready to be analyzed. The following changes have been made: the variables not used for joining the two data have been combined by averaging. The variable 'alc_use' is the average of 'Dalc' and 'Walc'and 'high_use' is TRUE if 'alc_use' is higher than 2 and FALSE otherwise.

@@ -366,6 +366,9 @@ summary {
 </div>
 
 
+<div id="week-3-logistic-regression" class="section level1">
+<h1>Week 3, Logistic Regression</h1>
+</div>
 <div id="reading-the-data" class="section level1">
 <h1>Reading the data</h1>
 <p>This week we will learn about logistic regression. Before analysing the data I have been done some wrangeling. It wasn’t as diffucult as week before. Now the data is ready to be analyzed. The following changes have been made: the variables not used for joining the two data have been combined by averaging. The variable ‘alc_use’ is the average of ‘Dalc’ and ‘Walc’and ’high_use’ is TRUE if ‘alc_use’ is higher than 2 and FALSE otherwise.</p>
@@ -622,7 +625,7 @@ loss_func(class = alc$high_use, prob = alc$probability)</code></pre>
 cv &lt;- cv.glm(data = alc, cost = loss_func, glmfit = m, K = 10)
 
 cv$delta[1]</code></pre>
-<pre><code>## [1] 0.3141361</code></pre>
+<pre><code>## [1] 0.3115183</code></pre>
 <p>Even after 10-fold cross validation the result remains the same. So 30% of observations are incorrectly classified.</p>
 </div>
 

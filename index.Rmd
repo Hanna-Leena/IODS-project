@@ -22,3 +22,18 @@ output:
 
 ***
 
+```{r child = "Chapter3.Rmd"}
+
+```
+
+
+ 
+
+
+
+
+
+
+
+
+

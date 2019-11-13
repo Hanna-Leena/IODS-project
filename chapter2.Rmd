@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 # Regression and model validation
 
 * This week week I am doing regression analysis and model validation. But first I had to wrangle with the original data. That was pretty difficult for me. But finally with lots of errors and trying again I succeeded.*

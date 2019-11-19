@@ -1,0 +1,267 @@
+---
+author: "Hanna-Leena Kukkola"
+title: "chapter4.Rmd"
+output: html_document
+---
+# Week 4, Excercise 4, Clustering and clasffification
+This week we are learning how cluster and classificate.
+First we need to load the Boston-data, from the MASS package.
+```{r}
+library(MASS)
+data("Boston")
+```
+#Then we explore the structure and the dimensions of the data
+```{r}
+str(Boston)
+dim(Boston)
+summary(Boston)
+```
+The data has 506 objects and 14 variables.This dataset is about housing values in suburbs of Boston. The variables are shortened, so for us to understand what they mean I have explainde the variables below.
+Variables: 
+"Crim" means per capita crime rate by town.
+"zn" means proportion of residential land zoned for lots over 25,000 sq.ft. 
+"indus" means proportion of non-retail business acres per town.
+"chas" means Charles River dummy variable (= 1 if tract bounds river; 0 otherwise).
+"nox" means nitrogen oxides concentration (parts per 10 million) 
+"rm" means average number of rooms per dwelling 
+"age" means proportion of owner-occupied units built prior to 1940 
+"dis" means weighted mean of distances to five Boston employment centres 
+"rad" means index of accessibility to radial highways 
+"tax" means full-value property-tax rate per $10,000. 
+"ptratio" means pupil-teacher ratio by town 
+"black" means 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town 
+"lstat" means lower status of the population (percent) 
+"medv" means median value of owner-occupied homes in $1000s
+
+# Then we are exploring the data by doing a graphical overview and by showing summaries of the variables.
+First I downlond few packages I could need during the excercise.
+```{r}
+library(ggplot2)
+library(GGally)
+library(tidyverse)
+
+```
+Next we are going to look at the summary of the Boston dataset
+```{r}
+summary(Boston)
+```
+If you look at the variables more closely, you can see that almost all the variables are normally distributed. You can know this by seeing that median and mean values are more or less close to each other. Variables "Zn" and "Crim" are not normally distributed. The variable "Chas" is a binary variable. 
+
+Next were are going to look for the correlations of the dataset.
+```{r}
+#First a picture of the graphical overview
+
+pairs(Boston)
+```
+This picture is not very clear. It is a picture of the pairs plot. All the blots are so small and so near to each other thatyou can actually see only black picture. From this picture you canno't see the correlations so next we are going to look at the correlations more closely.
+
+```{r}
+#Let's make a correlation matrix and draw a correlation plot
+
+cormatrix <- cor(Boston)
+cormatrix %>% round(digits = 2)
+```
+
+```{r}
+library(corrplot)
+corrplot(cormatrix, method = "circle", type = "upper", cl.pos = "b", tl.pos = "d", tl.cex = 0.6)
+```
+My R couldn't find a library corrplot, even tough that was instructed in the datacamp. Finally I found a package of corrplot. So after downloading that I could look at the correlations in this picture, which is more clear to me. There is strong negative correlation (big red ball), between dis-nox, dis-age and dis-indus. Meaning that moving furher from Boston employment centers the Nitrogen oxide concentration goes down, the proportion of owner-occupied units built prior to 1940 goes down. This seems clear and logical. Also lower status of the population (lstat) and median value of owner-occupied homes (medv) have strong neagtive correlation. When the percent of lower status of the population gets bigger the median value of owner-occupied homes in $1000s gets smaller. This also is logical. A positive correlation is marked with a big blue ball. So if you look at the picture, you can see that rad and tax have a strong postive correlation. This means that
+when the index of accessibility to radial highways rises also the full-value property-tax rate per $10,000 rises. 
+
+# Standardize the dataset and print out summaries of the scaled data
+Standardizing the dataset
+```{r}
+boston_scaled <- scale(Boston)
+summary(boston_scaled)
+```
+```{r}
+# The boston_scaled is a matrix and we are going to change it to a data for the future
+class(boston_scaled)
+```
+```{r}
+boston_scaled <- as.data.frame(boston_scaled)
+```
+After the data has been scaled you can see from the summary that all the means and medians are close to each other meaning that now they are normally distributed. This will help us  in scaling this dat in a fitted model.
+Next we are going to change the continuous crime rate variable into a categorical variable. We need to cut the crim variable by quantiles to get the high, low and middle rates of crime into their own categories. Then we are going to drop the old crim variable from the dataset and replace it with the new crime variable.
+```{r}
+# Creating a quantile vector
+
+bins <- quantile(boston_scaled$crim)
+bins
+```
+```{r}
+# creating a categorical variable crime
+
+crime <- cut(boston_scaled$crim, breaks = bins, include.lowest = TRUE, label = c("low", "med_low", "med_high", "high"))
+
+table(crime)
+```
+
+```{r}
+summary(boston_scaled)
+```
+```{r}
+library(dplyr)
+
+boston_scaled <- dplyr::select(boston_scaled, -crim)
+boston_scaled <- data.frame(boston_scaled, crime)
+summary(boston_scaled)
+```
+```{r}
+dim(boston_scaled)
+```
+The data has still 506 objects and 14 variables. The instructions said that we need to divide the dataset to train and test sets, so that only 80% of the data belongs to the train set.
+```{r}
+# We are going to make the train and the test sets by choosing 80% observations to the train set and the rest of the observations are in the test set.
+n <- nrow(boston_scaled)
+n
+```
+```{r}
+ind <- sample(n, size = n * 0.8)
+dim(ind)
+```
+```{r}
+train <- boston_scaled[ind, ]
+str(train)
+```
+So now the train set had 404 observations and 14 variables. This is 80% of the 506 observations we began with.
+
+Next we are creating the test set.
+```{r}
+test <- boston_scaled[-ind, ]
+str(test)
+```
+The test set has 102 observations and 14 variables. This is 20% of the original data set.
+
+# Next were are going to fit the linear discriminant analysis on the train set
+We are using the categorical crime rate as the target variable and all the other variables in the dataset as predictor variables. We are going to draw the LDA (bi)plot of the model.
+```{r}
+#Fitting the linear discriminant analysis on the train set
+
+lda.fit <-  lda(formula = crime ~ ., data = train)
+
+lda.arrows <- function(x, myscale = 1, arrow_heads = 0.1, color = "red", tex = 0.75, choices = c(1,2)){
+  heads <- coef(x)
+  arrows(x0 = 0, y0 = 0, 
+         x1 = myscale * heads[,choices[1]], 
+         y1 = myscale * heads[,choices[2]], col=color, length = arrow_heads)
+  text(myscale * heads[,choices], labels = row.names(heads), 
+       cex = tex, col=color, pos=3)
+}
+```
+
+```{r}
+
+#Target classes as numeric 
+
+classes <- as.numeric(train$crime)
+
+#Drawing a plot of the lda results
+
+plot(lda.fit, dimen = 2, col = classes, pch = classes)
+lda.arrows(lda.fit, myscale = 1)
+```
+
+#Next we are going to save the crime categories from the test set and then remove the categorical crime variable from the test dataset. After that we are going to predict the classes with the LDA model on the test data. 
+
+```{r}
+
+#We are going to save the crime categories from the test set
+
+correct_classes <- test$crime
+
+library(dplyr)
+
+#Next we are going to remove the categorial crime variable from the test dataset
+
+test <- dplyr::select(test, -crime)
+
+# Next we are going to predict with the LDA model on the test data
+
+lda.pred <- predict(lda.fit, newdata = test)
+
+#Then was asked to do a cross table of the results
+
+table(correct = correct_classes, predicted = lda.pred$class)
+```
+Here you can see how the model is working with the predictions. The model works well when predicting the high crime rates. The model makes errors when predicting the other crime classes. 
+
+#Next we are going load the Boston dataset again and standardize the dataset. We are going to calculate the distances between the observations. We are going to run k-means algorithm on the dataset. We are going to investigate what is the optimal number of clusters and run the algorithm again. In the end we are going to visualize the clusters and interpret the results.
+```{r}
+library(MASS)
+data("Boston")
+```
+```{r}
+dim(Boston)
+```
+We now have loaded the Boston dataset again from the MASS-library. We wanted to check that we have the correct amount of observations 506 and variables 14.
+
+Next we are going to measure the distance. I am going to use the Euklidean-distance, which is probably the most common one. K-means is old and often used clustering method. K-means counts the distance matrix automatically but you have to choose the number of clusters. I made the model with 3 clusters, because my opinion is that it worked better than 4 clusters.
+
+```{r}
+scale_Boston2 <- scale(Boston)
+scale_Boston2 <- as.data.frame(scale_Boston2)
+
+#Next we are going to calculate the distances, the Euklidean-distance.
+
+dist_eu <- dist(scale_Boston2)
+summary(dist_eu)
+```
+```{r}
+# K-means clustering
+
+km <- kmeans(scale_Boston2, centers = 3)
+```
+
+```{r}
+
+#Plotting the Boston dataset with clusters
+pairs(scale_Boston2, col = km$cluster)
+```
+```{r}
+pairs(scale_Boston2[1:6], col = km$cluster)
+```
+```{r}
+pairs(scale_Boston2[7:13], col = km$cluster)
+```
+
+Next were are going to investigate what is the optimal number of clusters. There are many ways to find out the optimal number of clusters, but we will use the Total of within cluster sum of squares (WCSS) and visualise the result with a plot.
+
+```{r}
+
+# First determine the number of clusters
+
+k_max <- 10
+
+# Calculate the total within sum of squares
+
+twcss <- sapply(1:k_max, function(k){kmeans(scale_Boston2, k)$tot.withinss})
+
+# Next we are going to visualize the results
+
+qplot(x = 1:k_max, y = twcss, geom = "line")
+
+```
+
+The optimal number of clusters is when the total WCSS drops radically. As you can see from the picture above this happens around, when x= 2. So the optimal number of clusters would be 2. Next we run the algorithm again with two clusters.
+
+```{r}
+km <- kmeans(scale_Boston2, centers = 2)
+
+pairs(scale_Boston2, col = km$cluster)
+```
+
+In this first picture all the variables are included. Because there are so many variables I think the picture is quite difficult to interpret and understand. That is why I choose to do two more plots, so that I can look at the effects more closely. 
+
+```{r}
+pairs(scale_Boston2[1:8], col = km$cluster)
+```
+```{r}
+pairs(scale_Boston2[6:13], col = km$cluster)
+```
+
+
+As you can see from the pictures above the variable "chas" doesn’t follow any pattern with any of the variables. These kind of pictures are hard for me to understand because I am doing this the very first time. I think, however, that there might be negative correlation between indus-dis, nox-dis, dis-lstat and positive correlation between indus-nox, age-nox, age-lstat.
+
+ 

@@ -3,8 +3,8 @@ author: "Hanna-Leena Kukkola"
 title: "chapter4.Rmd"
 output: html_document
 ---
-# Week 4, Excercise 4, Clustering and clasffification
-This week we are learning how cluster and classificate.
+# Week 4, Excercise 4, Clustering and classification
+This week we are learning how to cluster and classificate.
 First we need to load the Boston-data, from the MASS package.
 ```{r}
 library(MASS)

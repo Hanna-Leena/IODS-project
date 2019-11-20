@@ -30,8 +30,8 @@ colnames(hd)
 colnames(gii)
 
 
-hd <- hd %>% as_data_frame %>% rename(Rank = HDI.Rank, Hu_Dev_Ind = Human.Development.Index..HDI., Exp_Ya_Edu = Expected.Years.of.Education, Gross_Na_Inc = Gross.National.Income..GNI..per.Capita, Country = Country, Lif_Exp_Birth = Life.Expectancy.at.Birth, Mean_Ya_Edu = Mean.Years.of.Education, GNI = GNI.per.Capita.Rank.Minus.HDI.Rank)
-gii <- gii %>% as_data_frame %>% rename(GII = GII.Rank, Country = Country, Gen_In_Ind = Gender.Inequality.Index..GII., Ma_Mo_Ra = Maternal.Mortality.Ratio, Ado_Bi_Ra = Adolescent.Birth.Rate, Per_Rep_Par = Percent.Representation.in.Parliament, Pop_Sec_Edu_Fem = Population.with.Secondary.Education..Female., Pop_Sec_Edu_Ma = Population.with.Secondary.Education..Male., Lab_Fo_Par_Ra_Fem = Labour.Force.Participation.Rate..Female., Lab_Fo_Par_Ra_Ma = Labour.Force.Participation.Rate..Male.)
+hd <- hd %>% as_data_frame %>% rename(HDI.Rank = HDI.Rank, HDI = Human.Development.Index..HDI., Edu.Exp = Expected.Years.of.Education, GNI = Gross.National.Income..GNI..per.Capita, Country = Country, Life.Exp = Life.Expectancy.at.Birth, Edu.Mean = Mean.Years.of.Education, GNI.Minus.Rank = GNI.per.Capita.Rank.Minus.HDI.Rank)
+gii <- gii %>% as_data_frame %>% rename(GII.Rank = GII.Rank, Country = Country, GII = Gender.Inequality.Index..GII., Mat.Mor = Maternal.Mortality.Ratio, Ado.Birth = Adolescent.Birth.Rate, Parli.F = Percent.Representation.in.Parliament, Edu2.F = Population.with.Secondary.Education..Female., Edu2.M = Population.with.Secondary.Education..Male., Labo.F = Labour.Force.Participation.Rate..Female., Labo.M = Labour.Force.Participation.Rate..Male.)
 
 #Mutate the “Gender inequality” data and create two new variables
 colnames(hd)
@@ -39,8 +39,8 @@ colnames(gii)
 
 library(tidyverse)
 
-gii <- gii %>% mutate(edu2F_edu2M = Pop_Sec_Edu_Fem/Pop_Sec_Edu_Ma)
-gii <- gii %>% mutate(labF_labM = Lab_Fo_Par_Ra_Fem/Lab_Fo_Par_Ra_Ma)
+gii <- gii %>% mutate(edu2F_edu2M = Edu2.F/Edu2.M)
+gii <- gii %>% mutate(labF_labM = Labo.F/Labo.M)
 
 str(gii)
 
@@ -55,6 +55,8 @@ dim(hd_gii)
 #Write csv
 library(readr)
 write.csv(hd_gii, file = "human.csv", eol = "\r", na = "NA", row.names = FALSE)
+
+
 
 
 

@@ -1,4 +1,4 @@
-#Hanna-Leena Kukkola 19.11.2019 New excercise Data wrangling for the next week's data
+#Hanna-Leena Kukkola 20.11.2019 Week 4 and 5 data wrangling
 #https://github.com/Hanna-Leena/IODS-project
 
 #First reading the data "Human development" and "Gender inequality"
@@ -54,5 +54,9 @@ dim(hd_gii)
 
 #Write csv
 library(readr)
-write.csv("Human", file = "human.csv", eol = "\r", na = "NA", row.names = FALSE)
+write.csv(hd_gii, file = "human.csv", eol = "\r", na = "NA", row.names = FALSE)
+
+
+
+
 

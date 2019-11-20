@@ -53,7 +53,8 @@ Next were are going to look for the correlations of the dataset.
 
 pairs(Boston)
 ```
-This picture is not very clear. It is a picture of the pairs plot. All the blots are so small and so near to each other thatyou can actually see only black picture. From this picture you canno't see the correlations so next we are going to look at the correlations more closely.
+
+This picture is not very clear. It is a picture of the pairs plot. All the blots are so small and so near to each other thatyou can actually see only black picture. From this picture you cannot see the correlations so next we are going to look at the correlations more closely.
 
 ```{r}
 #Let's make a correlation matrix and draw a correlation plot
@@ -66,6 +67,7 @@ cormatrix %>% round(digits = 2)
 library(corrplot)
 corrplot(cormatrix, method = "circle", type = "upper", cl.pos = "b", tl.pos = "d", tl.cex = 0.6)
 ```
+
 My R couldn't find a library corrplot, even tough that was instructed in the datacamp. Finally I found a package of corrplot. So after downloading that I could look at the correlations in this picture, which is more clear to me. There is strong negative correlation (big red ball), between dis-nox, dis-age and dis-indus. Meaning that moving furher from Boston employment centers the Nitrogen oxide concentration goes down, the proportion of owner-occupied units built prior to 1940 goes down. This seems clear and logical. Also lower status of the population (lstat) and median value of owner-occupied homes (medv) have strong neagtive correlation. When the percent of lower status of the population gets bigger the median value of owner-occupied homes in $1000s gets smaller. This also is logical. A positive correlation is marked with a big blue ball. So if you look at the picture, you can see that rad and tax have a strong postive correlation. This means that
 when the index of accessibility to radial highways rises also the full-value property-tax rate per $10,000 rises. 
 

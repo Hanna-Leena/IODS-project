@@ -72,7 +72,7 @@ str_replace(human$GNI, pattern = ",", replace = "") %>% as.numeric
 # Exclude unneeded variables
 library(dplyr)
 keep <- c("Country", "Edu.Exp", "Life.Exp", "GNI", "Mat.Mor", "Ado.Birth", "Parli.F", "edu2F_edu2M", "labF_labM")
-dplyr::select(human, one_of(keep))
+human <- dplyr::select(human, one_of(keep))
 
 #Remove all rows with missing values
 complete.cases(human)
@@ -100,4 +100,6 @@ human3
 #The data should have now 155 observations and 8 variables
 dim(human3)
 
-
+#Write csv
+library(readr)
+write.csv(human, file = "create_Human.csv", eol = "\r", na = "NA", row.names = FALSE)

@@ -56,9 +56,48 @@ dim(hd_gii)
 library(readr)
 write.csv(hd_gii, file = "human.csv", eol = "\r", na = "NA", row.names = FALSE)
 
+#Week 5 data wrangling begins
 
+# Load the human data and explore the structures and dimensions of it.
+human <- read.csv("human.csv", header = TRUE)
+dim(human)
+str(human)
+#This data "human" has 195 observations of 19 variables. It deals with key aspects of human development such as education, life expectancy at birth, mean years of education. There are different countries involved.
 
+# Mutate the data: transform the Gross National Income (GNI) variable to numeric
+library(stringr)
+str(human$GNI)
+str_replace(human$GNI, pattern = ",", replace = "") %>% as.numeric
 
+# Exclude unneeded variables
+library(dplyr)
+keep <- c("Country", "Edu.Exp", "Life.Exp", "GNI", "Mat.Mor", "Ado.Birth", "Parli.F", "edu2F_edu2M", "labF_labM")
+dplyr::select(human, one_of(keep))
 
+#Remove all rows with missing values
+complete.cases(human)
+human_ <- filter(human, complete.cases(human))
+dim(human_)
+
+#Remove the observations which relate to regions instead of countries
+head(human_)
+tail(human_, 10)
+#The last 7 observations are related to regions, so let's choose all the others except the 7 last
+last <- nrow(human_) - 7
+human2 <- human_[1:last,]
+
+human2
+tail(human2)
+
+#Define the row names of the data by the country names and remove the country name column from the data.
+library(tibble)
+rownames(human2) <- human2$Country
+human2 <- as.data.frame(human2)
+library(dplyr)
+human3 <- dplyr::select(human2, -Country)
+human3
+
+#The data should have now 155 observations and 8 variables
+dim(human3)
 
 

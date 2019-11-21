@@ -1,0 +1,241 @@
+---
+author: "Hanna-Leena Kukkola"
+title: "chapter5.Rmd"
+output: html_document
+---
+## Week 5 
+Dimensionality reduction techniques.
+I had huge problems with the data wrangling and after all the tricks I did, I couldn't get the observations and variables correct, so I am now reading the processed data that was handed out to us.
+
+```{r}
+human <- read.table("http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/human2.txt", sep=",", header=TRUE)
+```
+
+Looking that we have now the right amount of observations and variables. In the human data after the data wrangling there should have been 155 observations and 8 variables. So as you can see, we have now the correct data in hands.
+```{r}
+dim(human)
+```
+
+## First let's look at the data in hand
+This week we are going to learn dimensionality and reduction techniques. We will work on   a data called the human-data. This dataset originates from the United Nations Development Programme and it is about measuring the development of a country with Human Development Index (HDI). More information about the data can be looked from these two webpages: http://hdr.undp.org/en/content/human-development-index-hdi and http://hdr.undp.org/sites/default/files/hdr2015_technical_notes.pdf.
+
+Like said before my data wrangling did not work and I ended up having the wrong amount of observations and variables, so I did the analysis with the given data. 
+
+We have read the data from the webpage and looked that we have now the correct amount of observations and variables. Let's look at the variable names.
+
+```{r}
+colnames(human)
+```
+
+Next we are going to look at the summary of the data.
+```{r}
+summary(human)
+```
+You can see now the means, the medians and the quartiles of the variables.
+
+```{r}
+head(human)
+```
+
+The data consists of 155 countries and 8 variables of each country. You one can see the name of the country and then the variables giving indications about the country’s development.
+
+Empowerment: Edu2.FM = Proportion of females with at least secondary education / Proportion of males with at least secondary education Labo.FM = Proportion of females in the labour force / Proportion of males in the labour force Parli.F = Percetange of female representatives in parliament.
+
+Health and knowledge: Life.Exp = Life expectancy at birth Edu.Exp = Expected years of schooling. GNI = Gross National Income per capita Mat.Mor = Maternal mortality ratio. Ado.Birth = Adolescent birth rate.
+
+```{r}
+
+#Let's look at the structure of the data
+
+str(human)
+```
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(GGally)
+
+#Let's look at a graphical overview of the data
+
+gather(human) %>% ggplot(aes(value)) + facet_wrap("key", scales = "free") + geom_bar()
+```
+
+
+```{r}
+h <- ggpairs(human, mapping = aes(alpha = 0.5), lower = list(combo = wrap("facethist", bins = 20)))
+h
+````
+
+Here you cann be see the graphical overviews of the data. All the variables are numeric. Only one variable the Edu.Exp is normallyt distributed.
+
+##Next we are going to study the relationships between the variables with correlation matrix
+
+```{r}
+#We are going to do a correlation matrix and draw a correlation plot to look at the relationships between the variables
+library(corrplot)
+library(tidyverse)
+
+correlation <- cor(human)
+correlation %>% round(digits = 2)
+```
+
+Then the correlation plot
+
+```{r}
+corrplot.mixed(correlation, lower.col = "black",  number.cex = .6)
+```
+
+Here you can see that the percetange of female representatives in parliament (variable Parli.F) or proportion of females in the labour force / proportion of males in the labour force (variable Labo.FM) don’t have any strong correlations with any of the other variables.
+
+The maternal mortality ratio (variable Mat.Mor) and life expectancy (variable Life.Exp) have strong negative correlation, which means that when maternal mortality ratio gets higher life expactancy gets lower. Also adolescence birth ratio (variable Ado.Birth) has strong negative correlation with life expectancy (variable Life.Exp). Higher education (variable Edu.Exp) and variable GNI seems to affect positively to life expactancy (variable Life.Exp).
+
+#Principal Component Analysis
+
+The next step was to do a PCA (princiapl componen analysis) to the non-standardized data.
+Principal Component Analysis (PCA) can be performed by two slightly different matrix decomposition methods from linear algebra: the Eigenvalue Decomposition and the Singular Value Decomposition (SVD). The function prcomp() function uses the SVD and is the preferred, more numerically accurate method.
+
+```{r}
+#First let's make a PCA with the SVD-method
+
+pca_human <- prcomp(human)
+sum_pca_human <- summary(pca_human)
+sum_pca_human
+```
+
+This is the PCA with the SVD-method.
+
+```{r}
+pca_pr <- round(100*sum_pca_human$importance[2, ], digits = 1)
+pc_lab <- paste0(names(pca_pr), "(", pca_pr, "%)")
+
+
+#Drawing the biplot
+biplot(pca_human, choices = 1:2, cex = c(0.8,1.0), col=c("coral", "black"), xlab = pc_lab[1], ylab = pc_lab[2], main = "PCA plot of non-scaled human data")
+```
+
+As you can see almost all the variables are gathered in a one corner and we have only  and one arrow. The other arrows are zero of length and indeterminate in angle so they are skipped. Because the PCA is sensitive to the relative scaling of the original features and it assumes that features with larger variance are more important than features with smaller variance. So without scaling the biplot looks like above. The GNI has the largest variance, so it becomes dominant as you can see.
+
+#Next we are going to standardize the variables in the human data and repeat the above analysis
+
+```{r}
+human_scaled <- scale(human)
+str(human_scaled)
+```
+
+Let's look at the summary of the scaled data
+```{r}
+summary(human_scaled)
+```
+
+As you can see the means and the medians are very close to each other.
+
+```{r}
+class(human_scaled)
+```
+
+```{r}
+human_scaled <- as.data.frame(human_scaled)
+```
+
+```{r}
+#Let's make the PCA again with using the SVD-method
+
+pca_human_s <- prcomp(human_scaled)
+
+sum_pca_human_s<-summary(pca_human_s)
+pca_pr_s <- round(100*sum_pca_human_s$importance[2, ], digits = 1)
+pc_lab<-paste0(names(pca_pr_s), " (", pca_pr_s, "%)")
+
+sum_pca_human_var_s<-sum_pca_human_s$sdev^2
+sum_pca_human_var_s
+```
+
+Next let's draw the biplot
+
+```{r}
+biplot(pca_human_s, choices = 1:2, cex= c(0.5,1.0), col=c("coral", "black"), xlab = pc_lab[1], ylab = pc_lab[2], main = "PCA plot of scaled human data")
+```
+
+As you can see now we have more than one arrow. So, the standardization works. Now the relative scaling between the variables is more similar and the GNI, which had the largest variance, doesn’t "run over" the other variables.
+
+Edu.Exp, GNI, Edu.FM and Life.Exp are close together and the arrows share a small angle, which means that these variables have high positive correlation. The arrows of Mat.Mor and Ado.Birth are directed to the opposite direction, which means that they have high negative correlation with the variables mentioned priorly. All these factors have high angle with Labo.FM and Parli.F, which means that there is not a high correlation.
+
+The angle between a feature and a PC axis can be understand as the correlation between the two. Small angle means high positive correlation.
+
+The length of the arrows are proportional to the standard deviations of the variables and they seem to be pretty similar with the different variables.
+
+#Next we are going to do multiple correspondence analysis MCA
+
+```{r}
+library(FactoMineR)
+```
+
+You need to download the FactoMineR package to do the MCA. From this package we will use the "tea" -data for the analysis. After loading the package, let's look how the tea-data looks like.
+
+```{r}
+data(tea)
+colnames(tea)
+```
+
+Here you can see what kind of variables you have in the tea-data.
+
+Let's look at the summary next
+
+```{r}
+summary(tea)
+```
+
+Let's look at the structure of the data
+
+```{r}
+str(tea)
+```
+
+As you can see the tea-data has 300 observations and 36 variables. Almost all the variables are categorial, with 2 to 7 categories. Only the variable “age” is not a categorial variable.
+
+Next we want to look the graphical overview of the data. With MCA you can analyse the pattern of relationships of several categorical variables. MCA deals with categorical variables, but continuous ones can be used as background variables
+
+For the categorical variables, you can either use the indicator matrix or the Burt matrix in the analysis. The Indicator matrix contains all the levels of categorical variables as a binary variables (1 = belongs to category, 0 = doesn’t belong to the category). Burt matrix is a matrix of two-way cross-tabulations between all the variables in the dataset
+
+The instructions said that you can do MCA for all the columns of just for some of the. Because the tea-data has so many observations and variables, I choosed to use only some of them in the MCA. I think then it is easier for me to interpret. We are also going to make a summary and graphical overview.
+
+```{r}
+#Let's choose the columns we want to keep
+library(dplyr)
+library(tidyverse)
+library(FactoMineR)
+
+keep <- c("Tea", "How", "sugar", "sex", "age_Q", "breakfast", "work", "price")
+
+#Next were are creating a new dataset with the selected columns
+
+teal <- tea[, keep]
+library(GGally)
+library(ggplot2)
+
+#Next we are going to do the summary and the graphical overview of the new data teal
+summary(teal)
+
+gather(teal) %>% ggplot(aes(value)) + facet_wrap("key", scales = "free") + geom_bar() + theme(axis.text.x = element_text(angle = 45, hjust =1, size =8))
+```
+
+Next let's do the multiple corrrespondence analysis
+
+```{r}
+mca <- MCA(teal, graph = FALSE)
+```
+
+Summary of the model
+
+```{r}
+summary(mca)
+```
+
+Visualizing the MCA
+
+```{r}
+plot(mca, invisible = c("ind"), habillage = "quali")
+```
+
+My interpretation of the MCA above: The distance between the different points gives a measure of their similarity. Younger peole (age from 15 to 24 and from 25 to 34) likes to have tea with sugar and at other time than breakfast. And middle age people, age from 35 to 44 and from 45 to 59 prefer to drink tea without sugar.
+

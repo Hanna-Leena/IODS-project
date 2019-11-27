@@ -5,7 +5,7 @@ output: html_document
 ---
 ## Week 5 
 Dimensionality reduction techniques.
-I had huge problems with the data wrangling and after all the tricks I did, I couldn't get the observations and variables correct, so I am now reading the processed data that was handed out to us.
+I had huge problems with the data wrangling and after all the tricks I did, I couldn't get the observations and variables correct, before I started to do the analysis part. Soo I had to read the processed data that was handed out to us.
 
 ```{r}
 human <- read.table("http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/human2.txt", sep=",", header=TRUE)

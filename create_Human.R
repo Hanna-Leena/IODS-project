@@ -99,6 +99,8 @@ human3
 
 #The data should have now 155 observations and 8 variables
 dim(human3)
+# I had some problems getting this right. But after looking all the steps I found my error. 
+# I did the analysis part before I had done the data wrangling because of the struggles I faced.
 
 #Write csv
 library(readr)

@@ -3,7 +3,7 @@
 
 #First load the data sets (BPRS and RATS)
 
-BPRS <- read.table("https://raw.githubusercontent.com/KimmoVehkalahti/MABS/master/Examples/data/BPRS.txt")
+BPRS <- read.table("https://raw.githubusercontent.com/KimmoVehkalahti/MABS/master/Examples/data/BPRS.txt", header = T)
 RATS <- read.table("https://raw.githubusercontent.com/KimmoVehkalahti/MABS/master/Examples/data/rats.txt")
 
 #Write the wrangled data sets to files in your IODS-project data-folder
@@ -48,3 +48,34 @@ library(tidyr)
 RATS$ID <- factor(RATS$ID)
 RATS$Group <- factor(RATS$Group)
 
+BPRS$treatment <- factor(BPRS$treatment)
+BPRS$subject <- factor(BPRS$subject)
+
+#Next step: Convert the data sets to long form. 
+#Add a week variable to BPRS and a Time variable to RATS.
+
+BPRSL <-  BPRS %>% gather(key = weeks, value = bprs, -treatment, -subject)
+RATSL <- RATS %>%
+  gather(key = WD, value = Weight, -ID, -Group) %>%
+  mutate(Time = as.integer(substr(WD,3,4)))
+
+#Now, take a serious look at the new data sets and compare them with their wide form versions.
+#Check the variable names, view the data contents and structures, and create some brief summaries of the variables.
+
+dim(BPRSL)
+#Now the BPRSL dataset has 360 observations and 4 variables.
+colnames(BPRSL)
+#The variables are named: "treatment", "subject", "weeks", and "bprs".
+str(BPRSL)
+summary(BPRSL)
+glimpse(BPRSL)
+
+dim(RATSL)
+#Now the RATSL data has 176 observations and 5 variables.
+
+colnames(RATSL)
+# The variables are named: "ID", "Group", "WD", "Weight", "Time".
+
+str(RATSL)
+summary(RATSL)
+glimpse(RATSL)

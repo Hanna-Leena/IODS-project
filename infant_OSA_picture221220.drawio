@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-22T09:41:59.180Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15" etag="qCP7wYBhqVgTuNTos8L8" version="13.10.8" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-22T09:42:40.114Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15" etag="f9n9Tjc7QOxz24Q8yzwV" version="13.10.8" type="github">
   <diagram id="P3dRrMUD8iR9ziaAYctq" name="Page-1">
     <mxGraphModel dx="830" dy="1731" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -292,13 +292,13 @@
         <mxCell id="WtVZW4URrRJd1sjvjsBa-70" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;OAHI&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1065" y="590" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="WtVZW4URrRJd1sjvjsBa-71" value="Supine vs Side Vs Prone&lt;br&gt;P = 0.53" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d6b656;gradientColor=#ffd966;fillColor=#FFD966;strokeWidth=3;" vertex="1" parent="1">
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-71" value="Supine vs Side Vs Prone&lt;br&gt;P = 0.02*" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d6b656;gradientColor=#ffd966;fillColor=#FFD966;strokeWidth=3;" vertex="1" parent="1">
           <mxGeometry x="1025" y="610" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="WtVZW4URrRJd1sjvjsBa-72" value="Supine vs side&lt;br&gt;P = 0.59" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d6b656;gradientColor=#ffd966;fillColor=#FFD966;strokeWidth=3;" vertex="1" parent="1">
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-72" value="Supine vs side&lt;br&gt;P = 0.001*" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d6b656;gradientColor=#ffd966;fillColor=#FFD966;strokeWidth=3;" vertex="1" parent="1">
           <mxGeometry x="1025" y="680" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="WtVZW4URrRJd1sjvjsBa-73" value="Supine vs Prone&lt;br&gt;P = 0.18" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d6b656;gradientColor=#ffd966;fillColor=#FFD966;strokeWidth=3;" vertex="1" parent="1">
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-73" value="Supine vs Prone&lt;br&gt;P = 0.05" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#d6b656;gradientColor=#ffd966;fillColor=#FFD966;strokeWidth=3;" vertex="1" parent="1">
           <mxGeometry x="1025" y="750" width="120" height="60" as="geometry" />
         </mxCell>
       </root>

@@ -1,1 +1,112 @@
-<mxfile host="app.diagrams.net" modified="2020-12-22T08:26:20.077Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15" etag="aA1Zm46BzKWDchTJ25H2" version="13.10.8" type="github"><diagram id="P3dRrMUD8iR9ziaAYctq" name="Page-1">7Vnbcts2EP0azbQPyvAi0tSjLNmOO3FjV5ne3iASJNGCAANCltSv74IE75SsumY8SfwgCVwsbuccLBfQxF4m+xuB0viOB5hOLCPYT+zVxLI824BvZTgUBvPCNgtLJEigbbVhTf7B2qgbRlsS4KzlKDmnkqRto88Zw75s2ZAQfNd2Czltj5qiCPcMax/RvvU3EshYr8u6qO3vMYnicmTTnRc1CSqd9UqyGAV81zDZVxN7KTiXRSnZLzFV4JW4FO2uj9RWExOYyXMafEJ//vXTH/d3d79Mf/WpMAJ55U11L4+IbvWCJ5ZLob/LjZqyPGgc3M9bNc/LkDM5zXKWFuBgeum+roRSpH5vWYiYzKB+RwAEy/i4yaTY+pI8YnhaU4xT+F2kDKNqOFG2hl5hIcYUPlCc9x1+YFCVzwo8jR9LB1j5pnTRiFfTtwTfsgArJEyo3sVE4nWKfFW7A+GCLZYJ1dUhoXTJKRd5WzsMQ8v3wQ6L4H9XMrCrcZoclIBiIfG+YdKc3GCeYCkO4KJryx2yq9Vlu9oWN5R1oW1ICzqqeqo5h4Km/T9IwB6QwFeDHgigaKLjizXrw2kNwTkzxsJzdnRLqc2jgC2DXLlvZv0t1NiFhWGFMyS3AknCQf4uShTqbJOlTedqi/ysuHD69uG9UtmKCY6xhTwfHxFBYWn4bjxn5hgvJA+7LY+ZNSAPY0AezljqcEZRhw6l15cCw2uHsCgHbpvBm3NQG7b1po2uNmznTG24Y2nDHUUbtyxLCQQOwFBxBlmWKp0VQcw3lfQiiPfaKrkYRSUfZYzFERkM5GDfuwwcZ/bOeWUhzE/l7m1KSmU8L59fH5JU8kQl9PeC5HFEcvWwvjnK+Rk5OUAv22S3KWSc4Y4CtAlREjF49IFQUK19qYgkcGhb6IqEBIEaZlBdtf5eShxWJwl1B2KENSANayxplKfnl04zPny6gvmsb1drNQOW97Oheb4xFDks+y1ydCOHNX/tFNQ8eegvoL/eUjpl+WT0PjfusQi5SAD+J5OH5gnd/NoP6N0j5hB/3peM+6b1NH8rdJAkUbctAvtcBMWRoEnhccq8+bdGmTkUkMfiTLrJg7l4NJcPn3e/f3hcpSl7GLxn68CZxShVxZDi/ULdXAIWmAW6uPIpyjLiP4Eqdk+iioPebWcH5j6mDcycE2FKYIryC75m90M46hHuOclfRJqyWZux7m1XxrfCx7pNzUWvmx7zptfuSCIRYdnrCFBGh4Zbqhyys6dbDlNLpOiwFkwF6PM1NHSx9KahE6R006tni8j7MiLy/peI4LH+M6Fwr/+Ssa/+BQ==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-12-22T08:35:47.948Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15" etag="LIn4smnVrj9010P5aNFr" version="13.10.8" type="github">
+  <diagram id="P3dRrMUD8iR9ziaAYctq" name="Page-1">
+    <mxGraphModel dx="830" dy="1731" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-1" value="&lt;b style=&quot;font-size: 18px&quot;&gt;Infants with Obstructive Sleep Apnea&lt;br&gt;2010 - 2019&lt;br&gt;(n = 100)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="30" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="100" y="240" width="260" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-4" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Desaturation&amp;nbsp;&lt;/b&gt;&lt;br&gt;n=15&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="130" y="430" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-5" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Apnea/Breathing pauses&lt;/b&gt;&lt;br&gt;n=32&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="130" y="350" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-6" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Inspirator stridor&amp;nbsp;&lt;/b&gt;&lt;br&gt;n=11&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="130" y="490" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-7" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Other&lt;/b&gt;&lt;br&gt;n=19&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="130" y="560" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-9" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Symptoms Prior to PSG&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="120" y="260" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-10" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;ALTE/SIDS in sibling&lt;/b&gt;&lt;br&gt;n=23&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="130" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-11" value="&lt;b&gt;Full-night PSG Performed&amp;nbsp;&lt;br&gt;(n = 11)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="100" y="90" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TaZjJYPMMR-Vclr0dtE8-12" value="&lt;b&gt;Daytime recording Performed&lt;br&gt;(n = 89)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="100" y="160" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t6mQ1Av1CQqwXLvDppnQ-1" value="" style="shape=flexArrow;endArrow=classic;html=1;fillColor=#ffe6cc;strokeWidth=3;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="70" as="sourcePoint" />
+            <mxPoint x="100" y="118" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="118" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t6mQ1Av1CQqwXLvDppnQ-4" value="" style="shape=flexArrow;endArrow=classic;html=1;fillColor=#ffe6cc;strokeWidth=3;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="120" as="sourcePoint" />
+            <mxPoint x="100" y="188" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="188" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-1" value="" style="shape=flexArrow;endArrow=classic;html=1;fillColor=#ffe6cc;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="190" as="sourcePoint" />
+            <mxPoint x="100" y="438" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="438" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="420" y="240" width="260" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="740" y="240" width="260" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-4" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;Group based&amp;nbsp;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="260" width="190" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-5" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;ALTE/SIDS in sibling&lt;/b&gt;&lt;br&gt;n=23&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="450" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-6" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Apnea/Breathing pauses&lt;/b&gt;&lt;br&gt;n=32&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="450" y="440" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-7" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Desaturation&amp;nbsp;&lt;/b&gt;&lt;br&gt;n=15&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="450" y="610" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-8" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Airway anomaly&lt;/b&gt;&lt;br&gt;n=3&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="450" y="360" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-9" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Genetic syndrome&lt;/b&gt;&lt;br&gt;n=10&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="450" y="525" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-10" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Laryngomalacia&lt;/b&gt;&lt;br&gt;n=17&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeWidth=3;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="450" y="680" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-12" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.404;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=6;" edge="1" parent="1" target="WtVZW4URrRJd1sjvjsBa-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="450" as="sourcePoint" />
+            <mxPoint x="520" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WtVZW4URrRJd1sjvjsBa-13" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.404;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="444.5" as="sourcePoint" />
+            <mxPoint x="740" y="444.5799999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="680" y="444.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

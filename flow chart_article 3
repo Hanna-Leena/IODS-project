@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-03-15T12:30:04.225Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" etag="kwVwA3QT84dcQwfUjhF6" version="13.10.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-15T12:30:31.968Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" etag="yGIZYNRPawi-xvYPZo8w" version="13.10.8" type="github">
   <diagram id="DF2mlXEuHdlDKjGw8yEZ" name="Page-1">
     <mxGraphModel dx="830" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -7,7 +7,7 @@
         <mxCell id="3wGdRQ6Y6ovGN7s6NIq0-1" value="&lt;b style=&quot;font-size: 18px&quot;&gt;Infants with Obstructive Sleep Apnea&lt;br&gt;2010 - 2019&lt;br&gt;(n = 100)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" vertex="1" parent="1">
           <mxGeometry x="250" y="10" width="360" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="3wGdRQ6Y6ovGN7s6NIq0-2" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Control study was done for&amp;nbsp;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;b&gt;(n=50)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" vertex="1" parent="1">
+        <mxCell id="3wGdRQ6Y6ovGN7s6NIq0-2" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Control study was done for n=50&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" vertex="1" parent="1">
           <mxGeometry x="250" y="110" width="360" height="70" as="geometry" />
         </mxCell>
         <mxCell id="3wGdRQ6Y6ovGN7s6NIq0-3" value="&lt;b&gt;Full-night PSG Performed&amp;nbsp;&lt;br&gt;(n = 13)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" vertex="1" parent="1">

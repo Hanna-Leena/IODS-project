@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" modified="2021-10-08T11:45:56.142Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15" etag="nnxDSxlap2sLtSD2US_v" version="13.10.8" type="github">
+  <diagram id="DF2mlXEuHdlDKjGw8yEZ" name="Page-1">
+    <mxGraphModel dx="830" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3wGdRQ6Y6ovGN7s6NIq0-1" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;786 DAY AND NIGHT TIME PSG &amp;lt; 6 MONTHS OF AGE &lt;br&gt;2010 - 05/2021&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="180" y="10" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="3wGdRQ6Y6ovGN7s6NIq0-2" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;82 PRS 2010 - 2018&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="380" y="110" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="3wGdRQ6Y6ovGN7s6NIq0-3" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;INCLUDED&lt;/font&gt;&lt;font size=&quot;2&quot;&gt;:&lt;/font&gt;&lt;br&gt;&lt;/b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;APNEA/DESAT 61&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;ALTE/SIDS IN SIBLING 31&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="134" y="300" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3wGdRQ6Y6ovGN7s6NIq0-4" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;INFANT OSA 148 PATIENTS 2010 - 05/2021&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="250" y="200" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3wGdRQ6Y6ovGN7s6NIq0-14" value="" style="shape=flexArrow;endArrow=classic;html=1;fillColor=#ffe6cc;strokeWidth=3;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="150" as="sourcePoint" />
+            <mxPoint x="250" y="228" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="190" y="228" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qz7Zozg9cgEF-D67B97x-1" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;EXCLUDED:&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;LARYNGOMALACIA 29&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;SDR/GENETICS 27&lt;/font&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="430" y="300" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qz7Zozg9cgEF-D67B97x-4" value="" style="endArrow=classic;html=1;strokeWidth=3;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;curved=1;" parent="1" source="3wGdRQ6Y6ovGN7s6NIq0-4" target="qz7Zozg9cgEF-D67B97x-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="310" as="sourcePoint" />
+            <mxPoint x="470" y="260" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="470" y="280" />
+              <mxPoint x="560" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qz7Zozg9cgEF-D67B97x-7" value="" style="endArrow=classic;html=1;strokeWidth=3;entryX=0.439;entryY=-0.017;entryDx=0;entryDy=0;curved=1;entryPerimeter=0;" parent="1" target="3wGdRQ6Y6ovGN7s6NIq0-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="260" as="sourcePoint" />
+            <mxPoint x="470" y="260" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="280" />
+              <mxPoint x="274" y="270" />
+              <mxPoint x="257" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qz7Zozg9cgEF-D67B97x-10" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;DAYTIME PSG 86&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;NIGHT TIME PSG 6&lt;/font&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="250" y="410" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qz7Zozg9cgEF-D67B97x-11" value="" style="shape=flexArrow;endArrow=classic;html=1;fillColor=#ffe6cc;strokeWidth=3;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="qz7Zozg9cgEF-D67B97x-10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="360" as="sourcePoint" />
+            <mxPoint x="240" y="438" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qz7Zozg9cgEF-D67B97x-12" value="" style="shape=flexArrow;endArrow=classic;html=1;fillColor=#ffe6cc;strokeWidth=3;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="80" as="sourcePoint" />
+            <mxPoint x="378" y="145" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="190" y="145" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qz7Zozg9cgEF-D67B97x-13" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;SUPINE 92&lt;br&gt;SIDE 71&lt;br&gt;PRONE 15&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="250" y="520" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="qz7Zozg9cgEF-D67B97x-15" value="" style="endArrow=classic;html=1;strokeWidth=3;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="389.5" y="470" as="sourcePoint" />
+            <mxPoint x="390" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
